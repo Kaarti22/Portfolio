@@ -46,6 +46,8 @@
   JWT_EXPIRES = 10d
   
   COOKIE_EXPIRES = 10
+
+
 ```
 
 <p>Finally to run this project, enter the following command in both frontend and the dashboard: </p>
