@@ -10,7 +10,7 @@ export const addNewSkill = catchAsyncErrors(async (req, res, next) => {
   const { svg } = req.files;
   const { title, proficiency } = req.body;
 
-  if (!title || !proficiency) {
+  if (!title) {
     return next(new ErrorHandler("Please fill the form completely", 400));
   }
 

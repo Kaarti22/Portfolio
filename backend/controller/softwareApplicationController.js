@@ -12,12 +12,6 @@ export const addNewApplication = catchAsyncErrors(async (req, res, next) => {
   const { svg } = req.files;
   const { name } = req.body;
 
-  if (!name) {
-    return next(
-      new ErrorHandler("Software Application's name is required", 400)
-    );
-  }
-
   const cloudinaryResponseForSvg = await cloudinary.uploader.upload(
     svg.tempFilePath,
     { folder: "Software Applications" }

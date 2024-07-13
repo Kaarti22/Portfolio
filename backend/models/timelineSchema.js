@@ -5,10 +5,7 @@ const timelineSchema = new mongoose.Schema({
     type: String,
     required: [true, "Title required!"],
   },
-  description: {
-    type: String,
-    required: [true, "Description required!"],
-  },
+  description: String,
   timeline: {
     from: {
       type: String,

@@ -18,10 +18,6 @@ export const addNewProject = catchAsyncErrors(async (req, res, next) => {
     deployed,
   } = req.body;
 
-  if (!title || !description || !gitRepoLink || !technologies) {
-    return next(new ErrorHandler("Please provide all the details", 400));
-  }
-
   const cloudinaryResponseForProjectBanner = await cloudinary.uploader.upload(
     projectBanner.tempFilePath,
     { folder: "Project images" }

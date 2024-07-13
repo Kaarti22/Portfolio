@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const softwareApplicationSchema = new mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    required: [true, "Name of the Software Application is required"],
+  },
   svg: {
     public_id: {
       type: String,

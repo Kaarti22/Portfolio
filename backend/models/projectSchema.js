@@ -1,11 +1,20 @@
 import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema({
-  title: String,
+  title: {
+    type: String,
+    required: [true, "Project Title is required"],
+  },
   description: String,
-  gitRepoLink: String,
+  gitRepoLink: {
+    type: String,
+    required: [true, "GitHub Repo Link is required"],
+  },
   projectLink: String,
-  technologies: String,
+  technologies: {
+    type: String,
+    required: [true, "Technologies are required"],
+  },
   deployed: String,
   projectBanner: {
     public_id: {
