@@ -1,3 +1,4 @@
+import SpecialLoadingButton from "@/components/SpecialLoadingButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,15 +19,15 @@ const Login = () => {
 
   const handleLogin = () => {
     dispatch(login(email, password));
-  }
+  };
 
   useEffect(() => {
-    if(error){
-        toast.error(error);
-        dispatch(clearAllUserErrors());
+    if (error) {
+      toast.error(error);
+      dispatch(clearAllUserErrors());
     }
-    if(isAuthenticated){
-        navigateTo("/");
+    if (isAuthenticated) {
+      navigateTo("/");
     }
   }, [dispatch, isAuthenticated, error, loading]);
 
@@ -46,8 +47,8 @@ const Login = () => {
               <Input
                 type="email"
                 placeholder="m@example.com"
-                value = {email}
-                onChange = {(ev) => setEmail(ev.target.value)}
+                value={email}
+                onChange={(ev) => setEmail(ev.target.value)}
                 required
               />
             </div>
@@ -61,11 +62,20 @@ const Login = () => {
                   Forgot your password?
                 </Link>
               </div>
-              <Input type="password" value={password} onChange={(ev) => setPassword(ev.target.value)} required />
+              <Input
+                type="password"
+                value={password}
+                onChange={(ev) => setPassword(ev.target.value)}
+                required
+              />
             </div>
-            <Button type="submit" className="w-full" onClick={handleLogin}>
-              Login
-            </Button>
+            {loading ? (
+              <SpecialLoadingButton content={"Logging In"}/>
+            ) : (
+              <Button type="submit" className="w-full" onClick={handleLogin}>
+                Login
+              </Button>
+            )}
           </div>
         </div>
       </div>
