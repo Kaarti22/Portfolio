@@ -173,12 +173,12 @@ export const updatePassword =
     }
   };
 
-export const updateProfile = (data) => async (dispatch) => {
+export const updateProfile = (newData) => async (dispatch) => {
   dispatch(userSlice.actions.updateProfileRequest());
   try {
     const { data } = await axios.put(
       "http://localhost:4000/api/v1/user/update/me",
-      data,
+      newData,
       {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },

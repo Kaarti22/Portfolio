@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
+import "./App.css"
 
 const App = () => {
 

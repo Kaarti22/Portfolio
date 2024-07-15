@@ -21,13 +21,14 @@
   width: 100%;
   padding: 7px;
   font-weight: 600;
-  border: 1px solid hsl(222.2, 47, 4%, 11.2%);
-  background: hsl(222.2, 47, 4%, 11.2%);
+  border-radius: 8px;
+  border: 1px solid hsl(222.2, 47.4%, 11.2%);
+  background: hsl(222.2, 47.4%, 11.2%);
   cursor: pointer;
   color: #fff;
 }
 
 .avatar-update-btn::file-selector-button:hover{
   background: transparent;
-  color: hsl(222.2, 47, 4%, 11.2%);
+  color: #111;
 }
