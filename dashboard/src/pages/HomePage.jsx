@@ -36,9 +36,8 @@ import AddProject from "@/components/AddProject";
 import AddSkill from "@/components/AddSkill";
 import AddApplication from "@/components/AddApplication";
 import AddTimeline from "@/components/AddTimeline";
-import Addmessages from "@/components/Addmessages";
+import Messages from "@/components/Messages";
 import Account from "@/components/Account";
-import SidebarLink from "@/components/SidebarLink";
 
 const HomePage = () => {
   const [active, setActive] = useState("Dashboard");
@@ -355,7 +354,7 @@ const HomePage = () => {
               return <AddTimeline />;
               break;
             case "Messages":
-              return <Addmessages />;
+              return <Messages />;
               break;
             case "Account":
               return <Account />;

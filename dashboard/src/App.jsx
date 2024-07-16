@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 import "./App.css"
+import { getAllMessages } from "./store/slices/messagesSlice";
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getUser());
+    dispatch(getAllMessages());
   }, []);
 
   return (
